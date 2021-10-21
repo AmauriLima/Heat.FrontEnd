@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import bannerGirl from '../../assets/images/banner-girl.png';
@@ -21,7 +20,7 @@ export const LoginBoxWrapper = styled.div`
   }
 `;
 
-export const SignInWithGithub = styled(Link)`
+export const SignInWithGithub = styled.a`
   background: ${({ theme }) => theme.colors.yellow};
   margin-top: 32px;
   padding: 0 40px;
