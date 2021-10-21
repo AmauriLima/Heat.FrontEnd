@@ -1,6 +1,16 @@
+import { VscGithubInverted } from 'react-icons/vsc';
+
+import { LoginBoxWrapper, SignInWithGithub } from './style';
+
 function LoginBox() {
   return (
-    <h1>LoginBox</h1>
+    <LoginBoxWrapper>
+      <strong>Entre e compartilhe sua mensagem</strong>
+      <SignInWithGithub to="#">
+        <VscGithubInverted size={24} />
+        Entrar com Github
+      </SignInWithGithub>
+    </LoginBoxWrapper>
   );
 }
 

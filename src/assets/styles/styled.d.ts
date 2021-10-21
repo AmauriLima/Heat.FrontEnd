@@ -9,8 +9,11 @@ declare module 'styled-components' {
         // dark: string,
       }
       black: {
+        dark: string,
         medium: string,
-      }
+        light: string,
+      },
+      yellow: string,
     }
   }
 }

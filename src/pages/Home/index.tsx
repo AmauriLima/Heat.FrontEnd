@@ -1,8 +1,12 @@
+import { LoginBox, MessageList } from '../../components';
 import { Container } from './styles';
 
 function Home() {
   return (
-    <Container />
+    <Container>
+      <MessageList />
+      <LoginBox />
+    </Container>
   );
 }
 
