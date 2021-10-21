@@ -11,5 +11,7 @@ export default {
       light: '#202024',
     },
     yellow: '#FFCD1E',
+    orange: '#ff008e',
+    pink: '#ff7a29',
   },
 } as DefaultTheme;
