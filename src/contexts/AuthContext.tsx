@@ -21,8 +21,10 @@ interface IAuthContextData {
 const AuthContext = createContext({} as IAuthContextData);
 
 function AuthProvider({ children }: IAuthProvider) {
+  const signInUrl = 'https://github.com/login/oauth/authorize?scope=user&client_id=736eaf50501ac1fe2ec5';
+
   const {
-    user, signInUrl, handleLogin, handleSignOut,
+    user, handleLogin, handleSignOut,
   } = useAuth();
 
   useEffect(() => {

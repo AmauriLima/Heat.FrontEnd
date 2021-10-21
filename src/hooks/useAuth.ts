@@ -16,7 +16,6 @@ interface IAuthResponse {
 
 function useAuth() {
   const history = useHistory();
-  const signInUrl = 'https://github.com/login/oauth/authorize?scope=user&client_id=736eaf50501ac1fe2ec5';
   const [user, setUser] = useState<IUser | null>(null);
 
   useEffect(() => {
@@ -54,7 +53,6 @@ function useAuth() {
   return {
     handleLogin,
     handleSignOut,
-    signInUrl,
     user,
   };
 }
