@@ -1,26 +1,47 @@
+import { useEffect, useState } from 'react';
+
 import {
   List, Message, MessageContent, MessageListWrapper, MessageUser, UserImage,
 } from './style';
 
 import logoImg from '../../assets/images/logo.svg';
 
+import MessagesService from '../../services/MessagesService';
+
+interface IMessage {
+  id: string,
+  text: string,
+  user: {
+    name: string,
+    avatar_url: string,
+  }
+}
+
 function MessageList() {
+  const [messages, setMessages] = useState<IMessage[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      const messagesList = await MessagesService.listThreeLastMessages() as IMessage[];
+      setMessages(messagesList);
+    })();
+  }, []);
+
   return (
     <MessageListWrapper>
       <img src={logoImg} alt="DoWhile 2021" />
 
       <List>
-        {new Array(3).fill('').map(() => (
-          <Message key={Math.random()}>
+        {messages.map((message) => (
+          <Message key={message.id}>
             <MessageContent>
-              Não vejo a hora de começar esse evento,
-              com certeza vai ser o melhor de todos os tempos, vamooo pra cima! 🔥🔥
+              {message.text}
             </MessageContent>
             <MessageUser>
               <UserImage>
-                <img src="https://github.com/AmauriLima.png" alt="" />
+                <img src={message.user.avatar_url} alt={message.user.name} />
               </UserImage>
-              <span>Diego Fernandes</span>
+              <span>{message.user.name}</span>
             </MessageUser>
           </Message>
         ))}
