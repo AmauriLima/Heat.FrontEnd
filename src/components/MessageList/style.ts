@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const MessageListWrapper = styled.div`
   display: flex;
@@ -42,21 +42,5 @@ export const MessageUser = styled.div`
   span {
     font-size: 16px;
     margin-left: 12px;
-  }
-`;
-
-export const UserImage = styled.div`
-  padding: 2px;
-  ${({ theme }) => css`
-    background: linear-gradient(100deg, ${theme.colors.pink} 0%, ${theme.colors.orange} 100%);
-  `}
-  border-radius: 50%;
-  line-height: 0;
-
-  img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 4px solid ${({ theme }) => theme.colors.black.medium};
   }
 `;

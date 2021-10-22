@@ -30,6 +30,9 @@
     "react/react-in-jsx-scope": "off",
     "class-methods-use-this": "off",
     "camelcase": "off",
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "react/destructuring-assignment": "off",
+    "react/require-default-props": "off",
+    "jsx-a11y/label-has-associated-control": "off"
   }
 }

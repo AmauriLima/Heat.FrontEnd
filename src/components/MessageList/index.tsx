@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 
 import {
-  List, Message, MessageContent, MessageListWrapper, MessageUser, UserImage,
+  List, Message, MessageContent, MessageListWrapper, MessageUser,
 } from './style';
 
 import logoImg from '../../assets/images/logo.svg';
 
 import MessagesService from '../../services/MessagesService';
+import { UserImage } from '..';
 
 interface IMessage {
   id: string,
@@ -38,9 +39,7 @@ function MessageList() {
               {message.text}
             </MessageContent>
             <MessageUser>
-              <UserImage>
-                <img src={message.user.avatar_url} alt={message.user.name} />
-              </UserImage>
+              <UserImage avatar_url={message.user.avatar_url} name={message.user.name} />
               <span>{message.user.name}</span>
             </MessageUser>
           </Message>

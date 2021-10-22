@@ -4,6 +4,9 @@ export default {
   colors: {
     gray: {
       light: '#e1e1e6',
+      medium: '#C4C4CC',
+      dark: '#8d8d99',
+      darker: '#29292e',
     },
     black: {
       dark: '#09090a',
@@ -11,7 +14,7 @@ export default {
       light: '#202024',
     },
     yellow: '#FFCD1E',
-    orange: '#ff008e',
-    pink: '#ff7a29',
+    pink: '#ff008e',
+    orange: '#ff7a29',
   },
 } as DefaultTheme;

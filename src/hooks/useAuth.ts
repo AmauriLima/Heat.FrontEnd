@@ -7,6 +7,10 @@ interface IUser {
   name: string,
   login: string,
   avatar_url: string,
+
+}
+interface IUserData {
+  user: IUser
 }
 
 interface IAuthResponse {
@@ -22,7 +26,7 @@ function useAuth() {
     (async () => {
       const token = localStorage.getItem('@dowhile:token') as string;
       if (token) {
-        const userData = await AuthService.refreshToken(token) as IUser;
+        const { user: userData } = await AuthService.refreshToken(token) as IUserData;
         setUser(userData);
       }
     })();

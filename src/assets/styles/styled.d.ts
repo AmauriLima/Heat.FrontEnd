@@ -5,8 +5,9 @@ declare module 'styled-components' {
     colors: {
       gray: {
         light: string,
-        // medium: string,
-        // dark: string,
+        medium: string,
+        dark: string,
+        darker: string,
       }
       black: {
         dark: string,
@@ -16,6 +17,7 @@ declare module 'styled-components' {
       yellow: string,
       pink: string,
       orange: string,
-    }
+    },
+    large: boolean,
   }
 }
