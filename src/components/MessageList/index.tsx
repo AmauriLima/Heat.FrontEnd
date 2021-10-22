@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import io from 'socket.io-client';
 
 import {
   List, Message, MessageContent, MessageListWrapper, MessageUser,
@@ -18,8 +19,30 @@ interface IMessage {
   }
 }
 
+const messageQueue: IMessage[] = [];
+
+const socket = io('http://localhost:4000');
+
+socket.on('new_message', (newMessage: IMessage) => {
+  messageQueue.push(newMessage);
+});
+
 function MessageList() {
   const [messages, setMessages] = useState<IMessage[]>([]);
+
+  useEffect(() => {
+    setInterval(() => {
+      if (messageQueue.length) {
+        setMessages((prevState) => ([
+          messageQueue[0],
+          prevState[0],
+          prevState[1],
+        ].filter(Boolean)));
+
+        messageQueue.shift();
+      }
+    }, 3000);
+  }, []);
 
   useEffect(() => {
     (async () => {

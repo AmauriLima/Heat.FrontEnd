@@ -7,7 +7,7 @@ function Home() {
   const { user } = useContext(AuthContext);
 
   return (
-    <Container>
+    <Container signed={!!user}>
       <MessageList />
       {user
         ? <SendMessageForm />
